@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { faLock } from '@fortawesome/free-solid-svg-icons';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
+import { LoginService} from '../../login.service'
 
 
 @Component({
@@ -10,15 +11,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-
-// email : string ='';
-// password :string ='';
-faLock = faLock;
+faLock = faCoffee;
 loginForm = new FormGroup({
   email: new FormControl(''),
   password: new FormControl(''),
 });
-constructor(private router: Router){
+constructor(private router: Router, private login :LoginService){
 }
 
 ngOnInit(): void {
@@ -28,26 +26,11 @@ ngOnInit(): void {
 }
 onSubmit(): void {
   if (this.loginForm.valid) {
-    // this.router.navigate(['products'])
-    console.log(this.loginForm.value)
-    // this.auth.login(this.loginForm.value).subscribe(
-    //   (result) => {
-    //     console.log(result);
-    //     this.router.navigate(['/admin']);
-    //   },
-    //   (err: Error) => {
-    //     alert(err.message);
-    //   }
-    // );
+    this.login.login(this.loginForm.controls['email'].value, this.loginForm.controls['password'].value).subscribe(res => {
+      this.router.navigate(['products']);
+    }, err =>{
+      console.log(err.error.message);
+    });
   }
 }
-
-// loginUser(){
-// if (this.email=='example@email.com' && this.password =='123'){
-//   alert('You are authorized');
-// }
-// else{
-//   alert('You are outsider');
-// }
-// }
  }

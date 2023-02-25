@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {ConfigService} from '../../config/config.service';
 
 @Component({
   selector: 'app-detail',
@@ -7,4 +8,15 @@ import { Component } from '@angular/core';
 })
 export class DetailComponent {
 
+  detail: any;
+  ID: any;
+
+  constructor(private apiDetail:ConfigService){
+  }
+
+  ngOnInit(){
+    this.apiDetail.getProductData(this.ID).subscribe((res :any )=>{
+      this.detail=res.products;
+    });
+  }
 }

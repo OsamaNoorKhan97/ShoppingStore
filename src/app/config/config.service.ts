@@ -11,13 +11,8 @@ export class ConfigService {
   getData(){
   return this.http.get('https://dummyjson.com/products');
   }
-  getProductData(){
-   return this.http.get('https://dummyjson.com/products/search?q=phone');
+  getProductData(ID: any){
+   return this.http.get('https://dummyjson.com/products/1');
   }
-  login(email:string, passsword:string){
-    return this.http.post('',JSON.stringify({
-      username:email,
-      passsword:passsword
-    }))
-  }
+
 }

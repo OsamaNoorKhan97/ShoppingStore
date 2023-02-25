@@ -1,0 +1,51 @@
+.products{
+  background: #ffffff;
+
+
+.container{
+  overflow-y: auto;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  .card-container{
+    width: 18rem;
+    padding: 10px;
+    margin: 15px;
+    height: fit-content;
+    background-color: #ded3ff;
+  }
+
+  .example-card{
+    width: 18rem;
+    padding: 0.60rem;
+    margin: 0.8rem;
+    height: fit-content;
+    background-color: #ded3ff;
+
+    img{
+      background-color: #e5e5e5;
+      align-items: center;
+      height: 2rem;
+      width: 2rem;
+    }
+
+    example-button-row{
+      button{
+        align-items: center;
+      }
+    }
+  }
+
+}
+
+.list-group-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.thumbnail-img{
+  height: 50px;
+  width: 50px;
+}
+}

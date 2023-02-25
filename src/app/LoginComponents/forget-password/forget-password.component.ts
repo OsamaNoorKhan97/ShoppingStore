@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { faLock } from '@fortawesome/free-solid-svg-icons';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-forget-password',
@@ -7,5 +7,5 @@ import { faLock } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./forget-password.component.scss']
 })
 export class ForgetPasswordComponent {
-  faLock = faLock;
+  faLock = faCoffee;
 }

@@ -13,8 +13,8 @@ export class ProductsComponent  {
   }
   product : any;
   ngOnInit(){
-    this.apiData.getData().subscribe(res=>{
-      this.product=res;
-    })
+    this.apiData.getData().subscribe((res :any )=>{
+      this.product=res.products;
+    });
   }
 }
